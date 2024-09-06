@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" content="IE=edge, chrome=1">
+  <meta name="title" content="Learning Representational Invariances for Data-Efficient Action Recognition">
+  <meta name="author" content="Qitong Wang">
+  <link rel="shortcut icon" type="image/png" href="/assets/images/IMG_5378.JPG"/>
+
+  <meta property="og:title" content="Learning Representational Invariances for Data-Efficient Action Recognition">
+  <meta property="og:image" content="assets/publications/2022-video-semi/title-image.png">
+  <meta property="og:description" content="Data augmentation is a ubiquitous technique for improving image classification when labeled data is scarce. Constraining the model predictions to be invariant to diverse data augmentations effectively injects the desired representational invariances to the model (e.g., invariance to photometric variations) and helps improve accuracy. Compared to image data, the appearance variations in videos are far more complex due to the additional temporal dimension. Yet, data augmentation methods for videos remain under-explored. This paper investigates various data augmentation strategies that capture different video invariances, including photometric, geometric, temporal, and actor/scene augmentations. When integrated with existing semi-supervised learning frameworks, we show that our data augmentation strategy leads to promising performance on the Kinetics-100/400, Mini-Something-v2, UCF-101, and HMDB-51 datasets in the low-label regime. We also validate our data augmentation strategy in the fully supervised setting and demonstrate improved performance.">
+  <meta property="og:type" content="website">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66337211-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-66337211-1');
+  </script>
+
+  <!-- Bootstrap and JQuery-->
+  <link href="/vendor/bootstrap/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/vendor/jquery/jquery-3.5.1.min.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="/assets/css/home.css" rel="stylesheet">
+
+  <!-- Resize videos -->
+  <script type="text/javascript">
+      $(document).ready(function() {
+        $(".exampleVideo").height($(".exampleVideo").width() * 0.56)
+    })
+  </script>
+
+  <style>
+      a.container {
+          color:#00278D!important
+      }
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand ml-auto js-scroll-trigger my-0" href="..">Qitong Wang</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#page-top">Overview</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container align-items-center my-auto pt-4">
+    <section class="container">
+      <a class="anchor" id="about"></a>
+
+      <!-- Title-->
+      <div class="col-12 mx-auto text-center">
+        <h1 class="title">Learning Representational Invariances for Data-Efficient Action Recognition</h1>
+      </div>
+
+      <!-- Authors-->
+      <div class="row justify-content-center">
+        
+        <div class="text-center px-4">
+          
+
+          
+
+          <h4><a href="https://yuliang.vision/" target="_blank">Yuliang Zou</a></h4>
+        </div>
+        
+        <div class="text-center px-4">
+          
+
+          
+
+          <h4><a href="https://sites.google.com/site/jchoivision/" target="_blank">Jinwoo Choi</a></h4>
+        </div>
+        
+        <div class="text-center px-4">
+          
+
+          
+
+          <h4><a href="https://wqtwjt1996.github.io/personal_website/" target="_blank">Qitong Wang</a></h4>
+        </div>
+        
+        <div class="text-center px-4">
+          
+
+          
+
+          <h4><a href="https://jbhuang0604.github.io/" target="_blank">Jia-Bin Huang</a></h4>
+        </div>
+        
+      </div>
+
+      <!-- Video -->
+      
+      <div class="col-10 my-4 mx-auto text-center">
+        <img src="../assets/publications/2022-video-semi/title-image.png" style="width: 100%">
+      </div>
+      
+      
+      <!--   Abstract   -->
+      <div class="row my-4 col-lg-10 col-md-10 col-sm-12 mx-auto justify-content-around">
+        <h1 class="section-heading">Abstract</h1>
+        <p class="text-justify">Data augmentation is a ubiquitous technique for improving image classification when labeled data is scarce. Constraining the model predictions to be invariant to diverse data augmentations effectively injects the desired representational invariances to the model (e.g., invariance to photometric variations) and helps improve accuracy. Compared to image data, the appearance variations in videos are far more complex due to the additional temporal dimension. Yet, data augmentation methods for videos remain under-explored. This paper investigates various data augmentation strategies that capture different video invariances, including photometric, geometric, temporal, and actor/scene augmentations. When integrated with existing semi-supervised learning frameworks, we show that our data augmentation strategy leads to promising performance on the Kinetics-100/400, Mini-Something-v2, UCF-101, and HMDB-51 datasets in the low-label regime. We also validate our data augmentation strategy in the fully supervised setting and demonstrate improved performance.</p>
+        <p class="text-justify" style="width: 100%"><b>Published at:</b> Computer Vision and Image Understanding (CVIU), 2022.</p>
+      </div>
+
+      <!--   Overview   -->
+      
+      
+      <!--   Results   -->
+      
+
+      <!--   Links   -->
+      <div class="row my-4 justify-content-center">
+      
+        
+          <div class="col-lg-2 col-md-2 col-sm-4 col-6 text-center">
+          <a href="https://arxiv.org/abs/2103.16565" style="color:#00278D!important" target="_blank"><i class="fa fa-2x fa-file-lines mb-3"></i></a>
+          <h4>Paper</h4>
+          </div>
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        <div class="col-lg-2 col-md-2 col-sm-4 col-6 text-center">
+          <a href="https://github.com/vt-vl-lab/video-data-aug" style="color:#00278D!important" target="_blank"><i class="fab fa-2x fa-github mb-3"></i></a>
+          <h4>Code</h4>
+        </div>
+        
+        
+      
+        
+        
+        
+        
+        <div class="col-lg-2 col-md-2 col-sm-4 col-6 text-center">
+          <a href="https://yuliang.vision/video-data-aug/" style="color:#00278D!important" target="_blank"><i class="fa-solid fa-2x fa-globe mb-3"></i></a>
+          <h4>Website</h4>
+        </div>
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        
+      
+      </div>
+      
+      <div class="row my-4 col-lg-8 col-md-10 col-sm-12 mx-auto" style="">
+        <h4 class="mx-auto">Bibtex</h4>
+        <p style="width: 100%; font-family: JetBrains Mono; font-size: 10pt; border: dashed; border-width: 1pt; background: #fbfdfd; border-color: #b3b3b3;  padding: 1em">@article{zou2023learning,<br>&emsp;title={Learning representational invariances for data-efficient action recognition},<br>&emsp;author={Zou, Yuliang and Choi, Jinwoo and Wang, Qitong and Huang, Jia-Bin},<br>&emsp;journal={Computer Vision and Image Understanding},<br>&emsp;volume={227},<br>&emsp;pages={103597},<br>&emsp;year={2023},<br>&emsp;publisher={Elsevier}<br>}</p>
+      </div>
+      
+    </section>
+
+    
+
+
+    <section id="footnote" class="mt-2">
+      <div class="row justify-content-center col-12 pb-5">
+        <a href="#page-top"><i class="fa-solid fa-angles-up"></i>&nbsp;&nbsp;Back to the top</a>
+        &emsp;
+        <a href=".."><i class="fa-solid fa-home"></i>&nbsp;&nbsp;Back to home</a>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>

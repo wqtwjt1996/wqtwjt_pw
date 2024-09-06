@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<head>
+    <meta charset="UTF-8">
+    <title>Qitong Wang</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" content="IE=edge, chrome=1">
+    <meta name="title" content="Qitong's homepage">
+    <link rel="shortcut icon" type="image/png" href="/assets/images/IMG_5378.JPG"/>
+
+    <meta property="og:title" content="Qitong Wang">
+    <meta property="og:image" content="img/profile1.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZN6KELDKY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CZN6KELDKY');
+    </script>
+
+    <!-- Bootstrap and JQuery-->
+    <link href="/vendor/bootstrap/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/vendor/jquery/jquery-3.5.1.min.js"></script>
+
+   <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="/assets/css/home.css" rel="stylesheet">
+
+</head>
+<body class="my-0 py-0">
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+   <!-- <a class="navbar-brand js-scroll-trigger" href="#about">Qitong Wang</a> -->
+    <button class="navbar-toggler navbar-toggler-right navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#service">Service</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#internship">Intern & Collab</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#misc">MISC</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="row col-lg-8 col-sm-12 mx-auto main-pane mb-2">
+<!-- About -->
+<section class="container">
+  <a class="anchor" id="about"></a>
+  <div class="col-12 py-5"></div>
+  <div class="row mx-auto mb-3">
+    <div class="col-lg-3 col-sm-12 my-auto py-2 px-0">
+      <div class="row">
+        <img id="profilePhoto" class="img-fluid img-profile" src="/assets/images/profile21.JPEG" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-sm-12 mx-auto my-auto px-0">
+      <div class="row">
+        <div class="col-12">
+          <p class="header-1 mb-1">{{ site.data.info.name }}</p>
+          <p class="header-2 mb-0">{{ site.data.info.position }}</p>
+          {% for x in site.data.info.institution %}
+            <p class="header-2 mb-0">{{ x }}</p>
+          {% endfor %}
+
+          <div class="header-2 mt-2">
+            <div class="collapse py-2" id="office"><b>Address:</b><br>{{ site.data.info.links["Office"] }}</div>
+            {% for link in site.data.info.links %}
+            {% if link[0] == "Office" %}
+            <a data-toggle="collapse" href="#office" role="button" aria-expanded="false" aria-controls="collapse-office">{{ link[0] }}</a>
+            {% else %}
+            <a href="{{ link[1] }}" target="_blank">{{ link[0] }}</a>&emsp;
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mx-auto pt-5">
+      <p class="lead">
+        I am currently pursuing my Ph.D. in the Department of Computer and Information Sciences (CIS) at the University of Delaware (UD), advised by <a href="https://sites.google.com/site/xipengcshomepage/home" target="_blank">Xi Peng</a>.
+        Previously I collaborate with <a href="https://en.wikipedia.org/wiki/Julie_Michelle_Klinger" target="_blank">Julie Michelle Klinger</a> on designing machine learning frameworks tailored for geospatial data analysis.
+        My research primarily revolves around Computer Vision and Machine Learning.
+        Specifically, I am dedicated to exploring the application of trustworthy deep learning models. 
+        Additionally, my research also involves developing frameworks for video learning and understanding.
+      </p>
+      <p class="lead mb-2">
+        Prior to joining the University of Delaware, I completed my M.S. degree in the Department of Computer Science at Boston University advised by <a href="https://www.cs.bu.edu/faculty/betke/" target="_blank">Margrit Betke</a>.
+        <!-- I also worked as visiting student at Shenzhen Institutes of Advanced Technology (SIAT) of the Chinese Academy of Science (CAS), where I worked with <a href="http://english.siat.cas.cn/SI2017/IAIT2017/RC1/CPE_20513/Researchers1/201707/t20170724_181172.html" target="_blank">Yu Qiao</a>. -->
+        During that period, my research focus was on developing models for text detection and recognition.
+        Before that, I got my B.Eng. degree from the Wuhan University of Technology.
+      </p>
+      <p class="lead mb-2"><strong>
+        I am looking for internship opportunities in the summer of 2025. Please feel free to reach out!
+    </strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section class="container lead" >
+  <hr>
+  <a class="anchor" id="news"></a>
+  <h1 class="col-12 px-0 mb-0">News</h1>
+  <ul class="my-0">
+  {% for news in site.data.news.recent %}
+    <li>{{ news }}</li>
+  {% endfor %}
+  </ul>
+  <span id="moreNews" style="display:none">
+  <ul class="my-0">
+  {% for news in site.data.news.more %}
+  <li>{{ news }}</li>
+  {% endfor %}
+  </ul>
+  </span>
+  <!-- <a href="javascript:;" onclick="showMoreNews()" id="moreNewsBtn" class="my-2 px-4">--- show more ---</a> -->
+</section>
+
+<!-- Publications -->
+<section class="container">
+  <hr>
+  <a class="anchor" id="publications"></a>
+  <div class="row mx-auto">
+    <h1 class="col-12 px-0 mb-0">Publications</h1>
+    {% assign sorted = site.publications | sort: 'year' | reverse %}
+    {% for pub in sorted %}
+    {% if pub.venue == "Under Review" %}
+    {% continue %}
+    {% endif %}
+    <div class="row each_pub">
+      <div class="d-none d-md-block col-md-4 d-lg-block col-lg-4 pub-thumbnail" style="min-height: 100px">
+        <a href="{{ pub.url }}">
+        {% if pub.thumb_width %}
+        <img class="img-fluid px-3 py-2 center-thumb" width="{{ pub.thumb_width }}%" style="margin:0 auto;" src="{{ pub.thumbnail }}">
+        {% else %}
+        <img class="img-fluid px-3 py-2 center-thumb" src="{{ pub.thumbnail }}">
+        {% endif %}
+        </a>
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-12 pl-4">
+        <div class="center-thumb">
+        <a href="{{ pub.url }}"><p class="pub_title">{{ pub.title }}</p></a>
+        <p class="pub_author">
+          {% for author in pub.authors %}
+            {% if author.first %}
+              {% assign author2 = author[0] %}
+              {% assign extra = author[1] %}
+            {% else %}
+              {% assign author2 = author %}
+              {% assign extra = "" %}
+            {% endif %}
+
+            {% assign author_info = site.data.people[author2] %}
+            {% if author_info %}
+              {% if author_info.website %}
+                <a style="color:#063d96" href="{{ author_info.website }}">{{ author_info.name }}</a>{{ extra }}{% if forloop.last == false %},&nbsp{% endif %}
+              {% else %}
+                {% if author2 == "Me" %}<b>{% endif %}{{ author_info.name }}{% if author2 == "Me" %}</b>{% endif %}
+              {% endif %}
+            {% else %}
+              {{ author2 }}{{ extra }}{% if forloop.last == false %},&nbsp{% endif %}
+            {% endif %}
+          {% endfor %}
+        </p>
+        <p class="pub_venue">{{ pub.venue }}</p>
+        <p class="pub_supplemental">
+          {% assign hasbib = False %}
+          {% for link in pub.links %}
+            {% if link[0] == "bibtex" %}
+            {% elsif link[0] == "pdf" %}
+            {% else %} <!-- Other links -->
+              <a class="button button-{{link[0]}}" href="{{ link[1] }}" target="_blank">
+                {{ link[0] }}
+              </a>
+            {% endif %}
+          {% endfor %}
+
+
+          {% if pub.bibtex %}
+          <a class="button button-bibtex" data-toggle="collapse" href="#collapse{{ pub.id }}" role="button" aria-expanded="false" aria-controls="collapse{{ pub.id }}"> bibtex </a>
+          {% endif %}
+
+          {% if pub.highlight %}
+          <a class="pub_highlight">{{ pub.highlight }}</a>
+          {% endif %}
+
+          <!-- Add bitext content -->
+          {% if pub.bibtex %}
+          <div class="collapse" id="collapse{{ pub.id }}">
+            <div class="card card-body" style="border: dashed; border-width: 1pt; background: #fbfdff; border-color: #00274D; margin: 0.5em">
+              <p style="font-family: JetBrains Mono; font-size: 9pt; margin: 0">{{ pub.bibtex }}</p>
+            </div>
+          </div>
+          {% endif %}
+          <!--No links-->
+          {% if pub.links %}
+          {% else %}
+          <a class="button button-empty" target="_blank">Content coming soon!</a>
+          {% endif %}
+        </p>
+
+        <!--Alternative venues-->
+        {% if pub.other_venues %}
+        {% for pub2 in pub.other_venues %}
+        <p class="pub_title mt-3">{{ pub2.title }}</p>
+        <p class="pub_author">
+          {% for author in pub2.authors %}
+          {% if author.first %}
+          {% assign author2 = author[0] %}
+          {% assign extra = author[1] %}
+          {% else %}
+          {% assign author2 = author %}
+          {% assign extra = "" %}
+          {% endif %}
+
+          {% assign author_info = site.data.people[author2] %}
+          {% if author_info %}
+          {% if author_info.website %}
+          <a style="color:#063d96" href="{{ author_info.website }}">{{ author_info.name }}</a>
+          {% else %}
+          {% if author2 == "Me" %}<b>{% endif %}{{ author_info.name }}{% if author2 == "Me" %}</b>{% endif %}
+          {% endif %}
+          {% else %}
+          {{ author2 }}
+          {% endif %}
+          {{ extra }}{% if forloop.last == false %},&nbsp{% endif %}
+          {% endfor %}
+        </p>
+        <p class="pub_venue">{{ pub2.venue }}</p>
+        <p class="pub_supplemental">
+          {% assign hasbib2 = False %}
+          {% for link in pub2.links %}
+            {% if link[0] == "bibtex" %}
+              {% assign hasbib2 = True %} <!-- Bibtext -->
+              <a class="button button-{{link[0]}}" data-toggle="collapse" href="#collapse{{ pub.id }}2" role="button" aria-expanded="false" aria-controls="collapse{{ pub.id }}2">
+                {{ link[0] }}
+              </a>
+            {% else %} <!-- Other links -->
+              <a class="button button-{{link[0]}}" href="{{ link[1] }}" target="_blank">
+                {{ link[0] }}
+              </a>
+            {% endif %}
+          {% endfor %}
+
+          {% if pub2.highlight %}
+          <a class="pub_highlight">{{ pub2.highlight }}</a>
+          {% endif %}
+
+          <!-- Add bitext content -->
+          {% if pub2.links.bibtex %}
+          <div class="collapse" id="collapse{{ pub.id }}2">
+<!--            <div class="card card-body">-->
+<!--              <embed type="text/html" src="{{ pub2.links.bibtex }}">-->
+<!--            </div>-->
+            <div class="card card-body" style="border: dashed; border-width: 1pt; background: #fbfdff; border-color: #00274D; margin: 0.5em">
+              <p style="font-family: JetBrains Mono; font-size: 9pt; margin: 0">{{ pub2.links.bibtex }}</p>
+            </div>
+          </div>
+          {% endif %}
+          <!--No links-->
+          {% if pub2.links %}
+          {% else %}
+          <a class="button button-empty" target="_blank">Content coming soon!</a>
+          {% endif %}
+        </p>
+        {% endfor %}
+        {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- service-->
+<section class="container lead" >
+  <hr>
+  <a class="anchor" id="service"></a>
+  <h1 class="col-12 px-0 mb-0">Service</h1>
+  <ul class="my-0 px-2" style="list-style-type: none; ">
+    {% for ss in site.data.service %}
+    <li>{{ ss }}</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<!-- Education-->
+<section class="container lead">
+
+  <hr>
+  <a class="anchor" id="education"></a>
+  <h1 class="col-12 px-0 mb-0">Education</h1>
+  <div class="container desc">
+    <div class="row">
+            <div class="col-lg-2 col-lg-offset-0">
+            </div><br/><br/>
+            <div class="col-lg-10">
+                <div class="row text-center">
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <p class="text-center"><img class="img-responsive" src="assets/images/udel.png" alt="" width="100px" height="100px"></p>
+                        <p class="text-center" style="font-size: 12px;">University of Delaware <br/> May 2021 - Present <br/> Doctor of Philosophy</p>
+                    </div>
+                    <div class="col-sm-1"></div> <!-- 空白列 -->
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <p class="text-center"><img class="img-responsive" src="assets/images/bu.png" alt="" width="100px" height="100px"></p>
+                        <p class="text-center" style="font-size: 12px;">Boston University <br/> Sep 2018 - May 2020 <br/> Master of Science</p>
+                    </div>
+                    <div class="col-sm-1"></div> <!-- 空白列 -->
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <p class="text-center"><img class="img-responsive" src="assets/images/whut.png" alt="" width="100px" height="100px"></p>
+                        <p class="text-center" style="font-size: 12px;">Wuhan University of Tech <br/> Sep 2014 - Jun 2018 <br/> Bachelor of Engineering</p>
+                    </div>
+                </div>
+            </div>
+    </div><!--/.row -->
+  </div><!--/.container -->
+</section><!--//section-->
+
+<!-- Internship-->
+<section class="container lead">
+  <hr>
+  <a class="anchor" id="internship"></a>
+  <h1 class="col-12 px-0 mb-0">Intern & Collab</h1>
+  <div class="container desc">
+      <!-- <div class="row justify-content-center">  -->
+      <div class="row">
+          <div class="col-lg-2 col-lg-offset-0">
+          </div><br/><br/>
+          <div class="col-lg-10">
+              <div class="row text-center">
+                  <div class="col-sm-3 col-sm-offset-1">
+                    <p class="text-center"><img class="img-responsive" src="assets/images/google.png" alt="" width="100px" height="100px"></p>
+                    <p class="text-center" style="font-size: 11px;">Google Research <br/> Research Collaboration <br/> Sep 2021 - Nov 2022</p>
+                  </div>
+                  <div class="col-sm-1"></div> <!-- 空白列 -->
+                  <div class="col-sm-3 col-sm-offset-1">
+                      <p class="text-center"><img class="img-responsive" src="assets/images/aws1.png" alt="" width="100px" height="100px"></p>
+                      <p class="text-center" style="font-size: 11px;">Amazon Web Service <br/> Applied Science Intern <br/> Jun 2021 - Aug 2021</p>
+                  </div>
+                  <div class="col-sm-1"></div> <!-- 空白列 -->
+                  <div class="col-sm-3 col-sm-offset-1">
+                    <p class="text-center"><img class="img-responsive" src="assets/images/siat.jpeg" alt="" width="100px" height="100px"></p>
+                    <p class="text-center" style="font-size: 11px;">Shenzhen Inst of Adv Tech <br/>Visiting Student <br/>  May 2020 - Aug 2020</p>
+                </div>
+              </div>
+          </div>
+      </div><!--/.row -->
+  </div><!--/.container -->
+</section><!--//section-->
+
+<!-- misc-->
+<section class="container lead" >
+  <hr>
+  <a class="anchor" id="misc"></a>
+  <h1 class="col-12 px-0 mb-0">MISC</h1>
+  <ul class="my-0 px-2" style="list-style-type: none; ">
+    <p class="lead">My <a href="https://www.16personalities.com/free-personality-test" target="_blank">MBTI</a> is <a href="https://www.16personalities.com/articles/assertive-commander-entj-a-vs-turbulent-commander-entj-t" target="_blank">ENTJ-A</a>. 
+      I have <a href="https://en.wikipedia.org/wiki/Absolute_pitch" target="_blank">perfect pitch</a>. :)</p>
+    <p class="lead"></p>
+  </ul>
+</section>
+
+<section class="container py-0" id="footnote">
+  <div class="col-12 py-5" style="text-align: center;">
+    <a href="#about"><i class="fa-solid fa-angles-up"></i>&nbsp;&nbsp;Back to the top</a><br>
+    <a href="https://pedro-morgado.github.io/" style="font-size: 12px;">&nbsp;&nbsp;(website code reference)</a>
+  </div>
+</section>
+
+</div>
+
+<script src="/vendor/jquery/jquery-3.5.1.min.js"></script>
+<script src="/vendor/bootstrap/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

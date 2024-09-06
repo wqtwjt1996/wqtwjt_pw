@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" content="IE=edge, chrome=1">
+  <meta name="title" content="Learning from Semantic Alignment between Unpaired Multiviews for Egocentric Video Recognition">
+  <meta name="author" content="Qitong Wang">
+  <link rel="shortcut icon" type="image/png" href="/assets/images/IMG_5378.JPG"/>
+
+  <meta property="og:title" content="Learning from Semantic Alignment between Unpaired Multiviews for Egocentric Video Recognition">
+  <meta property="og:image" content="assets/publications/2023-unpaired-multiview/title-image.png">
+  <meta property="og:description" content="We are concerned with a challenging scenario in unpaired multiview video learning. In this case, the model aims to learn comprehensive multiview representations while the cross-view semantic information exhibits variations. We propose Semantics-based Unpaired Multiview Learning (SUM-L) to tackle this unpaired multiview learning problem. The key idea is to build cross-view pseudo-pairs and do view-invariant alignment by leveraging the semantic information of videos. To facilitate the data efficiency of multiview learning, we further perform video-text alignment for first-person and third-person videos, to fully leverage the semantic knowledge to improve video representations. Extensive experiments on multiple benchmark datasets verify the effectiveness of our framework. Our method also outperforms multiple existing view-alignment methods, under the more challenging scenario than typical paired or unpaired multimodal or multiview learning.">
+  <meta property="og:type" content="website">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66337211-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-66337211-1');
+  </script>
+
+  <!-- Bootstrap and JQuery-->
+  <link href="/vendor/bootstrap/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/vendor/jquery/jquery-3.5.1.min.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="/assets/css/home.css" rel="stylesheet">
+
+  <!-- Resize videos -->
+  <script type="text/javascript">
+      $(document).ready(function() {
+        $(".exampleVideo").height($(".exampleVideo").width() * 0.56)
+    })
+  </script>
+
+  <style>
+      a.container {
+          color:#00278D!important
+      }
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand ml-auto js-scroll-trigger my-0" href="..">Qitong Wang</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#page-top">Overview</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container align-items-center my-auto pt-4">
+    <section class="container">
+      <a class="anchor" id="about"></a>
+
+      <!-- Title-->
+      <div class="col-12 mx-auto text-center">
+        <h1 class="title">Learning from Semantic Alignment between Unpaired Multiviews for Egocentric Video Recognition</h1>
+      </div>
+
+      <!-- Authors-->
+      <div class="row justify-content-center">
+        
+        <div class="text-center px-4">
+          
+
+          
+
+          <h4><a href="https://wqtwjt1996.github.io/personal_website/" target="_blank">Qitong Wang</a></h4>
+        </div>
+        
+        <div class="text-center px-4">
+          
+
+          
+
+          <h4><a href="https://garyzhao.github.io/" target="_blank">Long Zhao</a></h4>
+        </div>
+        
+        <div class="text-center px-4">
+          
+
+          
+
+          <h4><a href="https://scholar.google.com/citations?user=1H9CkZgAAAAJ&hl=en" target="_blank">Liangzhe Yuan</a></h4>
+        </div>
+        
+        <div class="text-center px-4">
+          
+
+          
+
+          <h4><a href="http://www.tliu.org/" target="_blank">Ting Liu</a></h4>
+        </div>
+        
+        <div class="text-center px-4">
+          
+
+          
+
+          <h4><a href="https://sites.google.com/site/xipengcshomepage/home" target="_blank">Xi Peng</a></h4>
+        </div>
+        
+      </div>
+
+      <!-- Video -->
+      
+      <div class="col-12 my-4 text-center">
+        <div style="width: 75%;height: 0;padding-bottom: 42%;position: relative;margin-left: auto;margin-right: auto;">
+          <iframe src="https://www.youtube.com/embed/_B-i2S0nA1I?si=AG5BHvQmn8Mk4YWq" type="text/html" allowfullscreen="" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+        </div>
+      </div>
+      
+      
+      <!--   Abstract   -->
+      <div class="row my-4 col-lg-10 col-md-10 col-sm-12 mx-auto justify-content-around">
+        <h1 class="section-heading">Abstract</h1>
+        <p class="text-justify">We are concerned with a challenging scenario in unpaired multiview video learning. In this case, the model aims to learn comprehensive multiview representations while the cross-view semantic information exhibits variations. We propose Semantics-based Unpaired Multiview Learning (SUM-L) to tackle this unpaired multiview learning problem. The key idea is to build cross-view pseudo-pairs and do view-invariant alignment by leveraging the semantic information of videos. To facilitate the data efficiency of multiview learning, we further perform video-text alignment for first-person and third-person videos, to fully leverage the semantic knowledge to improve video representations. Extensive experiments on multiple benchmark datasets verify the effectiveness of our framework. Our method also outperforms multiple existing view-alignment methods, under the more challenging scenario than typical paired or unpaired multimodal or multiview learning.</p>
+        <p class="text-justify" style="width: 100%"><b>Published at:</b> International Conference on Computer Vision (ICCV), Paris, France, 2023.</p>
+      </div>
+
+      <!--   Overview   -->
+      
+      <div class="col-10 my-4 mx-auto text-center">
+        <h1 class="section-heading">Overview</h1>
+        <img src="../assets/publications/2023-unpaired-multiview/overview.png" style="width: 100%">
+        <p class="text-justify">Illustration of our framework. First, one batch (batch size = 4) of multiview pseudo-pairs is built from unpaired first-person and third-person videos. The pseudo-pairs are built based on mining the most semantics-similar third-person video for every first-person video. During training, the global features for multiview alignment (z_f, z_t) are extracted by their corresponding encoder, following the projection networks (h_f, h_t). In addition, textual features (d_f, d_t) are extracted by a large language model from textual narrations of first-person and third-person videos. The semantic similarity between d_f and d_t is calculated to filter out the multiview pseudo-pairs with low semantic similarity. Then the multiview pairs with high semantic similarity are employed to learn the view-invariant representations with the contrastive learning method. To further improve data efficiency, we employ all the first-person and third-person videos in the batch to learn contrastive multimodal relations. Finally, the task-specific heads (g_f, g_t) for both first-person and third-person videos are trained to make predictions for their corresponding downstream tasks. During testing, we only use the first-person encoder and task-specific head (g_f) to make first-person video predictions.</p>
+      </div>
+      
+      
+      <!--   Results   -->
+      
+      <div class="col-30 my-4 mx-auto text-center">
+        
+          
+          <div class="col-8 my-4 mx-auto text-center">
+            <h1 class="section-heading">Comparisons on Charades-Ego</h1>
+            <!-- <p class="text-justify" style="width: 100%">Comparisons on Charades-Ego</p> -->
+          </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        
+          
+          
+          <div class="col-8 my-4 mx-auto text-center">
+            <img src="../assets/publications/2023-unpaired-multiview/res/1.png" style="width: 100%">
+          </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        
+          
+          
+          
+          <div class="col-8 my-4 mx-auto text-center">
+            <h1 class="section-heading">Comparisons on EPIC-Kitchens</h1>
+            <!-- <p class="text-justify" style="width: 100%">Comparisons on EPIC-Kitchens</p> -->
+          </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        
+          
+          
+          
+          
+          <div class="col-8 my-4 mx-auto text-center">
+            <img src="../assets/publications/2023-unpaired-multiview/res/2.png" style="width: 100%">
+          </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        
+          
+          
+          
+          
+          
+          <div class="col-8 my-4 mx-auto text-center">
+            <h1 class="section-heading">Comparisons on EPIC-Kitchens-100</h1>
+            <!-- <p class="text-justify" style="width: 100%">Comparisons on EPIC-Kitchens-100</p> -->
+          </div>
+          
+          
+          
+          
+          
+          
+          
+          
+        
+          
+          
+          
+          
+          
+          
+          <div class="col-8 my-4 mx-auto text-center">
+            <img src="../assets/publications/2023-unpaired-multiview/res/3.png" style="width: 100%">
+          </div>
+          
+          
+          
+          
+          
+          
+          
+        
+        </div>
+        
+
+      <!--   Links   -->
+      <div class="row my-4 justify-content-center">
+      
+        
+          <div class="col-lg-2 col-md-2 col-sm-4 col-6 text-center">
+          <a href="https://arxiv.org/abs/2308.11489" style="color:#00278D!important" target="_blank"><i class="fa fa-2x fa-file-lines mb-3"></i></a>
+          <h4>Paper</h4>
+          </div>
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        <div class="col-lg-2 col-md-2 col-sm-4 col-6 text-center">
+          <a href="https://github.com/wqtwjt1996/SUM-L" style="color:#00278D!important" target="_blank"><i class="fab fa-2x fa-github mb-3"></i></a>
+          <h4>Code</h4>
+        </div>
+        
+        
+      
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        
+      
+      </div>
+      
+      <div class="row my-4 col-lg-8 col-md-10 col-sm-12 mx-auto" style="">
+        <h4 class="mx-auto">Bibtex</h4>
+        <p style="width: 100%; font-family: JetBrains Mono; font-size: 10pt; border: dashed; border-width: 1pt; background: #fbfdfd; border-color: #b3b3b3;  padding: 1em">@InProceedings{Wang_2023_ICCV,<br>&emsp;author    = {Wang, Qitong and Zhao, Long and Yuan, Liangzhe and Liu, Ting and Peng, Xi},<br>&emsp;title     = {Learning from Semantic Alignment between Unpaired Multiviews for Egocentric Video Recognition},<br>&emsp;booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},<br>&emsp;month     = {October},<br>&emsp;year      = {2023},<br>&emsp;pages     = {3307-3317}<br>}</p>
+      </div>
+      
+    </section>
+
+    
+
+
+    <section id="footnote" class="mt-2">
+      <div class="row justify-content-center col-12 pb-5">
+        <a href="#page-top"><i class="fa-solid fa-angles-up"></i>&nbsp;&nbsp;Back to the top</a>
+        &emsp;
+        <a href=".."><i class="fa-solid fa-home"></i>&nbsp;&nbsp;Back to home</a>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>

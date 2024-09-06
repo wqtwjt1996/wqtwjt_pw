@@ -1,0 +1,7 @@
+@InProceedings{Wang_2020_CVPR_Workshops,
+	author = {Wang, Qitong and Zheng, Yi and Betke, Margrit},
+	title = {A Method for Detecting Text of Arbitrary Shapes in Natural Scenes That Improves Text Spotting},
+	booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+	month = {June},
+	year = {2020}
+}
