@@ -1,0 +1,7 @@
+@article{wang2022region,
+  title={Region-aware Arbitrary-shaped Text Detection with Progressive Fusion},
+  author={Wang, Qitong and Fu, Bin and Li, Ming and He, Junjun and Peng, Xi and Qiao, Yu},
+  journal={IEEE Transactions on Multimedia},
+  year={2022},
+  publisher={IEEE}
+}
